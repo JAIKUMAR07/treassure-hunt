@@ -1,0 +1,175 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background: linear-gradient(to bottom, #87ceeb, #4682b4);
+  font-family: Arial, sans-serif;
+}
+
+.scene {
+  width: 90%; /* Adjust width for responsiveness */
+  max-width: 350px; /* Limit max width for larger screens */
+  height: auto;
+  perspective: 600px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.chest {
+  width: 100%;
+  height: 200px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
+
+.chest-body {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #8b4513, #a0522d, #d2691e);
+  border: 8px solid #4a2511;
+  border-radius: 20px 20px 0 0;
+  position: absolute;
+  transform-style: preserve-3d;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+.chest-lid {
+  width: 100%;
+  height: 60px;
+  background: linear-gradient(45deg, #a0522d, #d2691e, #cd853f);
+  border: 8px solid #4a2511;
+  border-radius: 20px 20px 0 0;
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  transform-origin: top left;
+  transition: transform 0.5s;
+}
+
+.chest.open .chest-lid {
+  transform: rotate(-160deg);
+}
+
+.lock {
+  width: 60px;
+  height: 50px;
+  background: linear-gradient(45deg, #ffd700, #ffa500);
+  border: 4px solid #8b4513;
+  border-radius: 10px;
+  position: absolute;
+  bottom: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.keyhole {
+  width: 20px;
+  height: 30px;
+  background: #4a2511;
+  border-radius: 50% 50% 0 0;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.jewelry-container {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.jewelry {
+  font-size: 24px;
+  opacity: 0;
+  transition: all 0.5s;
+  position: absolute;
+  bottom: 0;
+}
+
+.jewelry.show {
+  opacity: 1;
+  transform: translateY(-50px);
+}
+
+.birthday-message {
+  position: absolute;
+  font-size: 24px;
+  font-weight: bold;
+  color: #ff4500;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: all 0.5s;
+  bottom: 100%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  white-space: nowrap;
+}
+
+.birthday-message.show {
+  opacity: 1;
+  transform: translate(-50%, -20px);
+}
+
+.wood-grain {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: repeating-linear-gradient(
+    30deg,
+    rgba(160, 82, 45, 0.1),
+    rgba(160, 82, 45, 0.1) 2px,
+    transparent 2px,
+    transparent 4px
+  );
+  border-radius: 20px 20px 0 0;
+  pointer-events: none;
+}
+
+.metal-bands {
+  position: absolute;
+  width: 100%;
+  height: 20px;
+  background: linear-gradient(90deg, #b8860b, #daa520, #b8860b);
+  top: 40px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.metal-corners {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background: linear-gradient(45deg, #b8860b, #daa520);
+  border-radius: 50%;
+}
+
+.corner-tl {
+  top: -5px;
+  left: -5px;
+}
+.corner-tr {
+  top: -5px;
+  right: -5px;
+}
+.corner-bl {
+  bottom: -5px;
+  left: -5px;
+}
+.corner-br {
+  bottom: -5px;
+  right: -5px;
+}

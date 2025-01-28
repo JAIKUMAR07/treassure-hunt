@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Treasure Hunt</title>
+    <link rel="stylesheet" href="index.css" />
+    <style></style>
+  </head>
+  <body>
+    <div id="gem1" class="gem gold-coin"></div>
+
+    <div id="gem2" class="gem ruby">
+      <h2 style="color: black">Networking</h2>
+    </div>
+
+    <div id="gem3" class="gem green-gem">
+      <h1>step to improve 💙</h1>
+    </div>
+
+    <div id="gem4" class="gem diamond">
+      <h2 style="color: black">
+        Constructive <br />
+        Feedback
+      </h2>
+    </div>
+
+    <div id="gem5" class="gem sapphire">
+      <h1>Confidence 💖</h1>
+    </div>
+
+    <div id="gem6" class="gem topaz">
+      <h2 style="color: black">creativity ✨</h2>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/draggabilly/3.0.0/draggabilly.pkgd.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const gems = document.querySelectorAll(".gem");
+        gems.forEach((gem) => {
+          new Draggabilly(gem, {
+            // No containment, gems are fully draggable
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
